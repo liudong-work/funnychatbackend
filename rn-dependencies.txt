@@ -1,0 +1,7 @@
+# React Native WebRTC 依赖
+react-native-webrtc: ^111.0.0
+@react-native-webrtc/react-native-webrtc: ^105.0.0
+# Socket.IO替代
+socket.io-client: ^4.7.4
+# 或者使用原生WebSocket
+# ws: ^8.14.2

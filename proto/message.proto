@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package protocol;
+
+message Message {
+  string from = 1;              // 发送者用户名
+  string fromUsername = 2;      // 发送者显示用户名
+  string to = 3;                // 接收者UUID(用户或群组)
+  string content = 4;            // 消息内容
+  int32 contentType = 5;        // 消息内容类型：1文字，2文件，3图片，4音频，5视频，6语音通话，7视频通话
+  int32 messageType = 6;        // 消息类型：1单聊，2群聊
+  bytes file = 7;               // 文件二进制数据
+  int64 timestamp = 8;          // 时间戳
+  
+  // 扩展字段
+  string url = 9;               // 文件URL
+  string filename = 10;         // 文件名
+  int64 filesize = 11;          // 文件大小
+}
+
+message User {
+  int32 id = 1;
+  string uuid = 2;
+  string username = 3;
+  string nickname = 4;
+  string avatar = 5;
+  string email = 6;
+}
+
+message Group {
+  int32 id = 1;
+  string uuid = 2;
+  string name = 3;
+  string notice = 4;
+  int32 userId = 5;             // 群主ID
+}
